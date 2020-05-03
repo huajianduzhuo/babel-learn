@@ -1,5 +1,7 @@
 # babel
 
+babel 使用：[https://babeljs.io/docs/en/usage](https://babeljs.io/docs/en/usage)
+
 babel包含
 
 * plugin： 新语法的转换（如箭头函数等）
@@ -60,3 +62,5 @@ built-in 方式。
 `corejs` 用来指定 core-js 的版本，必须与 package.json 的 dependencies 中的 core-js 的版本一致。
 
 `proposals` 默认为 false，只支持 stage-4 以下的 proposal。如果需要支持 stage-0 到 stage-4 的proposal，可以将该属性改为 true。
+
+查看 core-js 的使用方式及支持的proposal：[https://github.com/zloirock/core-js](https://github.com/zloirock/core-js)
