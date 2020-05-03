@@ -13,10 +13,22 @@ babel包含
 
 preset 用来提前定义好包含多个 plugin 的集合。
 
-preset-env 是一个只能的preset，它可以根据 
+preset-env 是一个智能的preset，它可以根据 
 .browserslist 中定义的需要兼容到的环境，从内置的mapping中解析出一个plugin list。
 
 > preset-env 不支持 stage-x plugins。
+
+### 使用 stsge-x plugin
+
+需要使用 stage-0 到 stage-3 的 plugin 时，需要自己引入依赖的 plugin，并且在配置文件中配置。如使用 `obj::fn()` 这种语法时，需要引入 `@babel/plugin-proposal-function-bind`，并且添加配置：
+
+```json
+{
+  "plugins": [
+    "@babel/plugin-proposal-function-bind"
+  ]
+}
+```
 
 ## polyfill
 
@@ -61,6 +73,7 @@ built-in 方式。
 
 `corejs` 用来指定 core-js 的版本，必须与 package.json 的 dependencies 中的 core-js 的版本一致。
 
-`proposals` 默认为 false，只支持 stage-4 以下的 proposal。如果需要支持 stage-0 到 stage-4 的proposal，可以将该属性改为 true。
+> `proposals` 默认为 false，只支持 stage-4 以下的 proposal。如果需要支持 stage-0 到 stage-4 的proposal，可以将该属性改为 true。
 
 查看 core-js 的使用方式及支持的proposal：[https://github.com/zloirock/core-js](https://github.com/zloirock/core-js)
+
